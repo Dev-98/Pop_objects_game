@@ -1,9 +1,10 @@
 import pygame, sys, os
 import random
-import datetime
+import streamlit as st
 
 
-def game_stream():
+if st.button('Play', use_container_width=True):
+    st.balloons()
     index =[]
     width = 600
     height = 700
@@ -95,6 +96,4 @@ def game_stream():
             if event.type == pygame.QUIT:
                 sys.exit()
 
-if __name__=='__main__':
 
-    game_stream()
