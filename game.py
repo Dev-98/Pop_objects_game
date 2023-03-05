@@ -18,18 +18,18 @@ def game_stream():
     # count = 0
     pygame.init()
     # Background
-    BG = pygame.transform.scale(pygame.image.load(os.path.join("C:\\Users\\DELL\\Desktop\\Hackhound\\code\\", "background-black.png")), (600, 800))
+    BG = pygame.transform.scale(pygame.image.load("background-black.png"), (600, 800))
     # game display
     gameDisplay = pygame.display.set_mode((width, height),pygame.RESIZABLE)
     gameDisplay.blit(BG, (0,0))
 
 
-    font = pygame.font.Font('C:\\Users\\DELL\\Desktop\\Hackhound\\code\\comic.ttf', 32)
+    font = pygame.font.Font('comic.ttf', 32)
     score_text = font.render(str(score), True, white)
     # life_left = font.render(str(life), True, white )
 
     def generate_random_fruits(fruit):
-        path =f'C:\\Users\\DELL\\Desktop\\Hackhound\\code\\{fruit}.png'
+        path =f'{fruit}.png'
         data[fruit] = {
             'img' : pygame.transform.scale(pygame.image.load(path),(80, 80)),
             'x' : random.randint(0, 500),
@@ -73,7 +73,7 @@ def game_stream():
 
                 current_position = pygame.mouse.get_pos()
                 if not value['hit'] and current_position[0] > value['x'] and current_position[0] < value['x']+60 and current_position[1] > value['y'] and current_position[1] < value['y']+60:
-                    path = os.path.join("C:\\Users\\DELL\\Desktop\\Hackhound\\code\\"+key+'.png')
+                    path = os.path.join(key+'.png')
                     value['img'] = pygame.transform.scale(pygame.image.load(path), (0, 0))
                     value['speed_x'] += 1
                     score += 1
@@ -82,11 +82,6 @@ def game_stream():
                     # index.append(pygame.mouse.get_pos())
                     value['hit'] = True
 
-               
-                    
-                # if value["hit"]:
-                #     playsound.playsound("sound.wav")
-                    
 
             else:
                 generate_random_fruits(key)
@@ -101,10 +96,5 @@ def game_stream():
                 sys.exit()
 
 if __name__=='__main__':
-    # now = datetime.datetime.now()
-    # current_time = now.strftime("%S")
-    # cond = 
-    # if int(current_time) <= int
 
     game_stream()
-    # sys.exit()
