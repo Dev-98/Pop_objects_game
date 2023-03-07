@@ -21,7 +21,7 @@ if st.button('Play', use_container_width=True):
     # Background
     BG = pygame.transform.scale(pygame.image.load("background-black.png"), (600, 800))
     # game display
-    gameDisplay = pygame.display.set_mode((width, height),pygame.RESIZABLE)
+    gameDisplay = pygame.display.set_mode((width, height))
     gameDisplay.blit(BG, (0,0))
 
 
