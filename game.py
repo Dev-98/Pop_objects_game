@@ -1,7 +1,7 @@
 import pygame, sys, os
 import random
+from pygame.locals import *
 import streamlit as st
-
 
 if st.button('Play', use_container_width=True):
     st.balloons()
